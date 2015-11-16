@@ -1,0 +1,26 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: movie_review_development
+  username: eugeneidan
+  password: jesus12684
+  host: localhost
+
+  
+test:
+  <<: *default
+  database: movie_review_test
+  username: eugeneidan
+  password: jesus12684
+  host: localhost
+
+production:
+  <<: *default
+  database: movie_review_production
+  username: movie_review
+  password: <%= ENV['MOVIE_REVIEW_DATABASE_PASSWORD'] %>
